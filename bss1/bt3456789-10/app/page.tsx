@@ -4,6 +4,7 @@ import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
       <Footer></Footer>
       <h2>Bài 10</h2>
       <FontAwesomeIcon className="text-[32px]" icon={faCoffee} />
+      <h2>Bài 11</h2>
+      <Image width={500} height={500} src="https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-windows-desktop-wallpaper-showing-a-green-grassy-area-image_2949017.jpg" alt=""></Image>
     </main>
   );
 }
