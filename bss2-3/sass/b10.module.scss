@@ -1,0 +1,32 @@
+
+.cart {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: #fff;
+  }
+  
+  .image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .details {
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .content {
+    color: #666;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
