@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { blogs } from "../BlogData";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 interface PropType {
   params: {
@@ -8,23 +9,24 @@ interface PropType {
   };
 }
 const BlogDetail: React.FC<PropType> = (props) => {
-  const router = useRouter();
-  const { title } = router.query;
-  const blog = blogs.find((b) => b.title === title);
-
-  if (!blog) {
-    return <div>Bài viết không tồn tại</div>;
-  }
+  const searchParam = useSearchParams();
   const { slug } = props.params;
+  const decodedPath = decodeURIComponent(slug.join(""));
+  console.log(decodedPath);
+
   return (
     <div>
-      Bạn đang xem blog với đường dẫn {slug.join("/")}
-      <div>
-        <h1>{blog.title}</h1>
-        <img src={blog.image} alt={blog.title} style={{ width: "400px" }} />
-        <p>Chi tiết bài viết sẽ nằm ở đây.</p>
-        <button onClick={() => router.back()}>Quay lại</button>
-      </div>
+      {blogs.map((blog) => {
+        return blog.title === decodedPath ? (
+          <ul className="w-[250px] p-[5px]" key={blog.id}>
+            <li>
+              <img className="size-[100%]" src={blog.image} alt="" />
+            </li>
+            <li>ID: {blog.id}</li>
+            <li>Tiêu đề: {blog.title}</li>
+          </ul>
+        ) : null;
+      })}
     </div>
   );
 };
