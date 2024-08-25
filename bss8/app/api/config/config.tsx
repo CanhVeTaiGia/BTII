@@ -8,7 +8,7 @@ type ConfigData = {
   timezone: string;
 };
 
-let configData: ConfigData | null = null; // Global variable to store configuration data
+let configData: ConfigData | null = null;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {

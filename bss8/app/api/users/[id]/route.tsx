@@ -46,9 +46,9 @@ export const PUT = async (req: NextRequest, { params }: PropType) => {
   const users: any[] = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const foundIndex: any = users?.findIndex((user) => user.id == id);
   if (foundIndex === -1) {
-    return NextResponse.json({ message: "Không tìm thấy người dùng" });
+    return NextResponse.json({ message: "Không tìm thấy sản phẩm" });
   }
   users[foundIndex] = updateUser;
   fs.writeFileSync(filePath, JSON.stringify(users, null, 2), "utf-8");
-  return NextResponse.json({ message: "Sửa thông tin người dùng thành công" });
+  return NextResponse.json({ message: "Sửa thông tin sản phẩm" });
 };
