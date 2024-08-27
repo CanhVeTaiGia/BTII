@@ -1,9 +1,5 @@
 import React from "react";
-
-export const metadata = {
-  title: "ISR với Next.js",
-};
-
+ 
 const ISRPage = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     next: { revalidate: 10 },

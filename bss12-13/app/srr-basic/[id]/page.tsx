@@ -1,5 +1,4 @@
 import { fetchData } from "../page";
-import { NextRequest } from "next/server";
 
 export interface PropType {
   params: {
